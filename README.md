@@ -41,3 +41,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 In the console, write: npm i -D tailwindcss postcss autoprefixer.
 
 npx tailwindcss init -p
+
+
+## Prisma (ORM)
+
+Instalamos la dependencia de desarrollo:
+npm i -D prisma
+
+Instalamos la dependencia de produccion:
+npm i @prisma/client
+
+npx prisma init  ==> se crea archivo .env y schema.prisma
