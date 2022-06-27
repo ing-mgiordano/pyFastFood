@@ -52,3 +52,7 @@ Instalamos la dependencia de produccion:
 npm i @prisma/client
 
 npx prisma init  ==> se crea archivo .env y schema.prisma
+
+## Axios 
+
+Instalamos axios : npm i axios
