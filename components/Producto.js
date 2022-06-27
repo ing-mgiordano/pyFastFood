@@ -27,7 +27,7 @@ const Producto = ({producto}) => {
 
                 <button
                     type='button'
-                    className="bg-indigo-600 hover:bg-indigo-800 rounded-3xl text-white w-full mt-5 p-3 uppercase font-bold"
+                    className="bg-indigo-600 hover:bg-indigo-800 rounded-xl text-white w-full mt-5 p-3 uppercase font-bold"
                     onClick={() => {
                         handleModal()
                         handleProducto(producto)
