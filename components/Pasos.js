@@ -10,6 +10,20 @@ const Pasos = () => {
 
     const router = useRouter()
 
+    const calcularProgreso = () => {
+        let porcentaje
+        if(router.pathname === '/'){
+            porcentaje = 5
+        }
+        if(router.pathname === '/resumen'){
+            porcentaje = 50
+        }
+        if(router.pathname === '/total'){
+            porcentaje = 100
+        }
+        return porcentaje
+    }
+
     return (
         <>
             <div className="flex justify-between mb-5">
@@ -24,6 +38,15 @@ const Pasos = () => {
                         {paso.nombre}
                     </button>
                 ))}
+            </div>
+
+            <div className='bg-gray-100 mb-10'>
+                <div
+                    className='rounded-full bg-amber-500 text-xs leading-none h-2 text-center text-white'
+                    style={{width: `${calcularProgreso()}%`}}
+                >
+
+                </div>
             </div>
         </>
     )
