@@ -81,15 +81,39 @@ const QuioscoProvider = ({children}) => {
         e.preventDefault()
         
         const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 3000));
-        toast.promise(
-            resolveAfter3Sec,
-            {
-                pending: 'Enviando Pedido',
-                success: 'Pedido Enviado 👌',
-                error: 'Hubo un Problema 🤯'
-            }
-        )
         
+        try {
+           const {data} = await axios.post('/api/ordenes',
+                {pedido, nombre, total, fecha: Date.now().toString()}
+            )
+           /* console.log(data) */
+            toast.promise(
+                resolveAfter3Sec,
+                {
+                    pending: 'Enviando Pedido',
+                    success: 'Pedido Enviado 👌'
+                }
+            )
+
+            //Resetear app
+            setCategoriaClick(categorias[0])
+            setPedido([])
+            setNombre('')
+            setTotal(0)
+
+            setTimeout(() => {
+                router.push('/')
+            }, 6000);
+
+        } catch (error) {
+            toast.promise(
+                resolveAfter3Sec,
+                {
+                    pending: 'Enviando Pedido',
+                    error: 'Hubo un Problema 🤯'
+                }
+            )   
+        }    
     }
 
     return (
