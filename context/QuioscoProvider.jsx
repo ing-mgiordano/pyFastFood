@@ -38,7 +38,7 @@ const QuioscoProvider = ({children}) => {
         setModal(!modal)
     }
 
-    const handlePedido = ({categoriaId, imagen, ...producto}) => {  // si escribo las variables del lado izquierdo de los ... se eliminan esas variables del objeto 
+    const handlePedido = ({categoriaId, ...producto}) => {  // si escribo las variables del lado izquierdo de los ... se eliminan esas variables del objeto 
         if(pedido.some(productoAdd => productoAdd.id === producto.id)) {
             //Actualizar cantidad
             const pedidoActualizado = pedido.map(productoAdd => productoAdd.id === producto.id ? producto : productoAdd)
