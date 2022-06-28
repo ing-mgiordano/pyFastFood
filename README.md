@@ -59,3 +59,6 @@ Instalamos axios : npm i axios
 
 ## Modal 
 Instalamos React Modal (https://www.npmjs.com/package/react-modal): npm i react-modal
+
+## Alerta 
+Instalamos React toastyfy (https://www.npmjs.com/package/react-toastify): npm i react-toastify
